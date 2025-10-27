@@ -1,0 +1,32 @@
+# Netlify configuration for Gloucestershire Orchard Trust static site
+
+[build]
+  # No build command needed for static HTML
+  publish = "."
+
+[[redirects]]
+  # Redirect /home to root
+  from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  # Redirect /varieties to apples index
+  from = "/varieties"
+  to = "/varieties/apples/index.html"
+  status = 301
+
+[[headers]]
+  # Apply security headers to all pages
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-XSS-Protection = "1; mode=block"
+
+[[headers]]
+  # Cache static assets
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
