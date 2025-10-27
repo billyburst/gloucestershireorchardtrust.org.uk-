@@ -76,15 +76,23 @@ After deployment, you can add a custom domain:
 
 ```
 static-site/
-├── index.html                     # Homepage
-├── varietal-research.html         # Research page
-├── community-orchards.html        # Community orchards
-├── pears.html                     # Perry pears
-├── plums.html                     # Plums
-├── identification.html            # Identification service
+├── index.html                                        # Homepage
+├── native_apples_of_gloucestershire.pdf.html         # PDF placeholder
+├── perry_pears.pdf.html                              # PDF placeholder
+├── gloucestershire_plums.pdf.html                    # PDF placeholder
+├── community-orchards-in-gloucestershire/
+│   └── index.html                                   # Community orchards
 ├── varieties/
+│   ├── varietal-research/
+│   │   └── index.html                               # Research page
+│   ├── identification/
+│   │   └── index.html                               # Identification service
+│   ├── pears/
+│   │   └── index.html                               # Perry pears
+│   ├── plums/
+│   │   └── index.html                               # Plums
 │   └── apples/
-│       ├── index.html            # Apple varieties main page
+│       ├── index.html                               # Apple varieties main
 │       ├── ashmeads-kernel.html
 │       ├── bedminster-pippin.html
 │       ├── councillor.html
@@ -92,10 +100,28 @@ static-site/
 │       ├── gloucester-royal.html
 │       └── hunts-duke-of-gloucester.html
 ├── css/
-│   └── style.css                 # Main stylesheet
-├── netlify.toml                  # Netlify configuration
-└── README.md                     # This file
+│   └── style.css                                    # Main stylesheet
+├── netlify.toml                                     # Netlify configuration
+└── README.md                                        # This file
 ```
+
+## URL Structure
+
+All pages match the sitemap requirements:
+
+- `/` - Homepage
+- `/varieties/varietal-research/` - Research
+- `/community-orchards-in-gloucestershire/` - Community orchards
+- `/varieties/apples/` - Apple varieties
+- `/varieties/pears/` - Perry pears
+- `/varieties/plums/` - Plums
+- `/varieties/identification/` - Identification service
+- `/varieties/apples/[variety-name]/` - Individual apple pages
+
+PDF placeholders (replace with actual PDFs):
+- `/native_apples_of_gloucestershire.pdf`
+- `/perry_pears.pdf`
+- `/gloucestershire_plums.pdf`
 
 ## Browser Support
 
